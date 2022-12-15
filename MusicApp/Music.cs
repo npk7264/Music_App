@@ -36,10 +36,10 @@ namespace MusicApp
             lbSong.Text = Home.songClick;
             lbSinger.Text = "Singer: " + Functions.GetFieldValues("select CaSi from BAIHAT where TenBaiHat = N'" + Home.songClick + "'");
             lbComposer.Text = "Composer: " + Functions.GetFieldValues("select SangTac from BAIHAT where TenBaiHat = N'" + Home.songClick + "'");
-            lbCategory.Text = "Category: " + Functions.GetFieldValues("select TheLoai from BAIHAT where TenBaiHat = N'" + Home.songClick + "'");
+            lbCategory.Text = "Genre: " + Functions.GetFieldValues("select TheLoai from BAIHAT where TenBaiHat = N'" + Home.songClick + "'");
 
             // Load lời bài hát
-            string lyrics_path = "C:\\Users\\Phuc Khang\\Downloads\\fionafung.txt";
+            string lyrics_path = "songLyric/" + songImg + ".txt";
             if (File.Exists(lyrics_path))
             {
                 StreamReader reader = new StreamReader(lyrics_path);

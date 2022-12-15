@@ -65,6 +65,7 @@
             this.pbHome.Size = new System.Drawing.Size(50, 50);
             this.pbHome.TabIndex = 20;
             this.pbHome.TabStop = false;
+            this.pbHome.Click += new System.EventHandler(this.pbHome_Click);
             // 
             // pnBack
             // 

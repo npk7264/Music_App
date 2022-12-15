@@ -63,7 +63,7 @@ namespace MusicApp
             List<string> times = Functions.GetFieldValuesList(
                 "select ThoiGian from LICHSU where TenBaiHat = N'" + Home.songClick + "' order by ThoiGian desc");
 
-            foreach(string time in times)
+            foreach (string time in times)
             {
                 Panel pn = new Panel();
                 pn.Width = flpnTime.Width - 28;
@@ -126,6 +126,16 @@ namespace MusicApp
         {
             Panel pnParent = (Panel)((Control)sender).Parent;
             _songLeave(pnParent, e);
+        }
+
+        private void pbHome_Click(object sender, EventArgs e)
+        {
+            List<Form> openForms = new List<Form>();
+            foreach (Form f in Application.OpenForms)
+                openForms.Add(f);
+            foreach (Form f in openForms)
+                if (f.Name != "Home")
+                    f.Close();
         }
     }
 }

@@ -30,10 +30,8 @@
         {
             this.flpnHistory = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pbHome = new System.Windows.Forms.PictureBox();
             this.pnBack = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
             this.SuspendLayout();
             // 
             // flpnHistory
@@ -54,17 +52,6 @@
             this.label2.Size = new System.Drawing.Size(81, 38);
             this.label2.TabIndex = 11;
             this.label2.Text = "View";
-            // 
-            // pbHome
-            // 
-            this.pbHome.BackgroundImage = global::MusicApp.Properties.Resources.home_icon;
-            this.pbHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbHome.Location = new System.Drawing.Point(375, 20);
-            this.pbHome.Name = "pbHome";
-            this.pbHome.Size = new System.Drawing.Size(50, 50);
-            this.pbHome.TabIndex = 20;
-            this.pbHome.TabStop = false;
             // 
             // pnBack
             // 
@@ -96,7 +83,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1478, 841);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pbHome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.flpnHistory);
             this.Controls.Add(this.pnBack);
@@ -105,7 +91,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "History";
             this.Load += new System.EventHandler(this.History_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,7 +101,6 @@
         private System.Windows.Forms.Panel pnBack;
         private System.Windows.Forms.FlowLayoutPanel flpnHistory;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pbHome;
         private System.Windows.Forms.Label label1;
     }
 }

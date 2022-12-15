@@ -37,7 +37,6 @@
             this.pbPlay = new System.Windows.Forms.PictureBox();
             this.rtxtLyrics = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pbHome = new System.Windows.Forms.PictureBox();
             this.pbSong = new System.Windows.Forms.PictureBox();
             this.pnBack = new System.Windows.Forms.Panel();
             this.lbSinger = new System.Windows.Forms.Label();
@@ -52,7 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAddPlaylist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLike)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSong)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -144,24 +142,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(368, 358);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 38);
+            this.label1.Size = new System.Drawing.Size(107, 45);
             this.label1.TabIndex = 7;
             this.label1.Text = "Lyrics";
-            // 
-            // pbHome
-            // 
-            this.pbHome.BackgroundImage = global::MusicApp.Properties.Resources.home_icon;
-            this.pbHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbHome.Location = new System.Drawing.Point(375, 20);
-            this.pbHome.Name = "pbHome";
-            this.pbHome.Size = new System.Drawing.Size(50, 50);
-            this.pbHome.TabIndex = 20;
-            this.pbHome.TabStop = false;
             // 
             // pbSong
             // 
@@ -260,7 +247,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1478, 841);
             this.Controls.Add(this.axWindowsMediaPlayer1);
-            this.Controls.Add(this.pbHome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rtxtLyrics);
             this.Controls.Add(this.panel2);
@@ -278,7 +264,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAddPlaylist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLike)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSong)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -298,7 +283,6 @@
         private System.Windows.Forms.PictureBox pbAddPlaylist;
         private System.Windows.Forms.PictureBox pbLike;
         private System.Windows.Forms.PictureBox pbPlay;
-        private System.Windows.Forms.PictureBox pbHome;
         private System.Windows.Forms.Label lbSinger;
         private System.Windows.Forms.Label lbComposer;
         private System.Windows.Forms.Label lbCategory;
