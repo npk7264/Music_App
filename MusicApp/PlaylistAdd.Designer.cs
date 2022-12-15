@@ -42,7 +42,10 @@
             // 
             // btnAddToPlaylist
             // 
+            this.btnAddToPlaylist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(211)))), ((int)(((byte)(215)))));
             this.btnAddToPlaylist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddToPlaylist.FlatAppearance.BorderSize = 0;
+            this.btnAddToPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddToPlaylist.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddToPlaylist.Location = new System.Drawing.Point(1267, 141);
             this.btnAddToPlaylist.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
@@ -50,7 +53,7 @@
             this.btnAddToPlaylist.Size = new System.Drawing.Size(183, 60);
             this.btnAddToPlaylist.TabIndex = 23;
             this.btnAddToPlaylist.Text = "Add";
-            this.btnAddToPlaylist.UseVisualStyleBackColor = true;
+            this.btnAddToPlaylist.UseVisualStyleBackColor = false;
             this.btnAddToPlaylist.Click += new System.EventHandler(this.btnAddToPlaylist_Click);
             // 
             // label1

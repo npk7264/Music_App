@@ -30,10 +30,10 @@
         {
             this.flpnTime = new System.Windows.Forms.FlowLayoutPanel();
             this.pnSong = new System.Windows.Forms.Panel();
-            this.pbHome = new System.Windows.Forms.PictureBox();
-            this.pnBack = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pbHome = new System.Windows.Forms.PictureBox();
+            this.pnBack = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +53,28 @@
             this.pnSong.Name = "pnSong";
             this.pnSong.Size = new System.Drawing.Size(1075, 100);
             this.pnSong.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(375, 90);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 38);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Song";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(375, 288);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 38);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Time";
             // 
             // pbHome
             // 
@@ -77,28 +99,6 @@
             this.pnBack.Size = new System.Drawing.Size(342, 838);
             this.pnBack.TabIndex = 12;
             this.pnBack.Click += new System.EventHandler(this.pnBack_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(375, 90);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 38);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Song";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(375, 288);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 38);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Time";
             // 
             // DetailHistory
             // 

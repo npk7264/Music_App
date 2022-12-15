@@ -153,9 +153,9 @@ namespace MusicApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap rock {
+        internal static System.Drawing.Bitmap rap {
             get {
-                object obj = ResourceManager.GetObject("rock", resourceCulture);
+                object obj = ResourceManager.GetObject("rap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
