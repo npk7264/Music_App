@@ -17,8 +17,12 @@ namespace MusicApp
             InitializeComponent();
         }
 
+        public static int history_to_music;
+
         private void DetailHistory_Load(object sender, EventArgs e)
         {
+            history_to_music = 0;
+
             PictureBox pbSong = new PictureBox();
             pbSong.Size = new Size(60, 60);
             pbSong.Location = new Point(10, 10);
@@ -84,7 +88,9 @@ namespace MusicApp
 
         private void pnBack_Click(object sender, EventArgs e)
         {
+            history_to_music = 0;
             this.Close();
+
             History frm = new History();
             frm.ShowDialog();
         }
@@ -93,6 +99,9 @@ namespace MusicApp
         {
             Panel temp = (Panel)sender;
             Home.songClick = temp.Controls[1].Text;
+
+            history_to_music = 1;
+            this.Close();
 
             Music frm = new Music();
             frm.ShowDialog();

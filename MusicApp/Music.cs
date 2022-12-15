@@ -117,6 +117,12 @@ namespace MusicApp
         {
             axWindowsMediaPlayer1.Ctlcontrols.stop();
             this.Close();
+
+            if(DetailHistory.history_to_music == 1)
+            {
+                DetailHistory frm = new DetailHistory();
+                frm.ShowDialog();
+            }
         }
 
         private void pbDownload_Click(object sender, EventArgs e)
