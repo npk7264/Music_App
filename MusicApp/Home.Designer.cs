@@ -170,6 +170,7 @@
             this.txtSearch.Size = new System.Drawing.Size(1046, 23);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // label1

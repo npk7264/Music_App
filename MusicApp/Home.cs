@@ -178,6 +178,8 @@ namespace MusicApp
             }
         }
 
+
+
         private void btnPlaylist_Click(object sender, EventArgs e)
         {
             Playlist frm = new Playlist();
@@ -240,6 +242,150 @@ namespace MusicApp
         {
             History frm = new History();
             frm.ShowDialog();
+        }
+
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            List<string> listBaiHat = Functions.GetFieldValuesList("select TenBaiHat from BAIHAT");
+            List<string> listCaSi = Functions.GetFieldValuesList("select distinct CaSi from BAIHAT");
+
+            string searchText = txtSearch.Text;
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                flpnSong.Controls.Clear();
+
+                // Tim kiem theo ten bai hat
+                foreach (string baihat in listBaiHat)
+                {
+                    string[] baihatWord = searchText.Split(' ', ',');
+
+                    bool flag = true;
+                    foreach (string c in baihatWord)
+                    {
+                        if (baihat.ToUpper().IndexOf(c.ToUpper()) == -1)
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        Panel pnSong = new Panel();
+                        pnSong.Width = flpnSong.Width - 28;
+                        pnSong.Height = 80;
+                        pnSong.Margin = new Padding(0, 0, 0, 0);
+                        //
+                        PictureBox pbSong = new PictureBox();
+                        pbSong.Size = new Size(60, 60);
+                        pbSong.Location = new Point(10, 10);
+                        string songImg = Functions.GetFieldValues(
+                            "select AnhBaiHat from BAIHAT where TenBaiHat = N'" + baihat + "'");
+                        pbSong.BackgroundImage = Image.FromFile("songImage/" + songImg + ".jpg");
+                        pbSong.BackgroundImageLayout = ImageLayout.Stretch;
+                        //
+                        Label lbSong = new Label();
+                        lbSong.Text = baihat;
+                        lbSong.Location = new Point(110, 10);
+                        lbSong.Font = new Font("Arial Rounded MT", 14, FontStyle.Bold);
+                        lbSong.ForeColor = Color.FromArgb(64, 64, 64);
+                        lbSong.AutoSize = true;
+                        //
+                        Label lbSinger = new Label();
+                        lbSinger.Text = Functions.GetFieldValues(
+                            "select CaSi from BAIHAT where TenBaiHat = N'" + baihat + "'");
+                        lbSinger.Location = new Point(110, 50);
+                        lbSinger.Font = new Font("Arial Rounded MT", 10, FontStyle.Bold);
+                        lbSinger.ForeColor = Color.Gray;
+                        lbSinger.AutoSize = true;
+                        //
+                        pnSong.Controls.Add(pbSong);
+                        pnSong.Controls.Add(lbSong);
+                        pnSong.Controls.Add(lbSinger);
+                        //
+                        pnSong.MouseClick += new MouseEventHandler(this._songClick);
+                        pnSong.MouseHover += new EventHandler(this._songHover);
+                        pnSong.MouseLeave += new EventHandler(this._songLeave);
+                        pnSong.Cursor = Cursors.Hand;
+                        //
+                        foreach (Control control in pnSong.Controls)
+                        {
+                            control.MouseClick += new MouseEventHandler(this._itemClick);
+                            control.MouseHover += new EventHandler(this._itemHover);
+                            control.MouseLeave += new EventHandler(this._itemLeave);
+                        }
+                        flpnSong.Controls.Add(pnSong);
+                    }
+                }
+
+                // Tim bai hat theo ca si
+                foreach (string casi in listCaSi)
+                {
+                    string[] casiWord = searchText.Split(' ', ',');
+
+                    bool flag = true;
+                    foreach (string c in casiWord)
+                    {
+                        if (casi.ToUpper().IndexOf(c.ToUpper()) == -1)
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+
+                    if (flag)
+                    {
+                        List<string> listBaiHattheoCaSi = Functions.GetFieldValuesList("select TenBaiHat from BAIHAT where CaSi = N'" + casi + "'");
+                        foreach (string baihat in listBaiHattheoCaSi)
+                        {
+                            Panel pnSong = new Panel();
+                            pnSong.Width = flpnSong.Width - 28;
+                            pnSong.Height = 80;
+                            pnSong.Margin = new Padding(0, 0, 0, 0);
+                            //
+                            PictureBox pbSong = new PictureBox();
+                            pbSong.Size = new Size(60, 60);
+                            pbSong.Location = new Point(10, 10);
+                            string songImg = Functions.GetFieldValues(
+                                "select AnhBaiHat from BAIHAT where TenBaiHat = N'" + baihat + "'");
+                            pbSong.BackgroundImage = Image.FromFile("songImage/" + songImg + ".jpg");
+                            pbSong.BackgroundImageLayout = ImageLayout.Stretch;
+                            //
+                            Label lbSong = new Label();
+                            lbSong.Text = baihat;
+                            lbSong.Location = new Point(110, 10);
+                            lbSong.Font = new Font("Arial Rounded MT", 14, FontStyle.Bold);
+                            lbSong.ForeColor = Color.FromArgb(64, 64, 64);
+                            lbSong.AutoSize = true;
+                            //
+                            Label lbSinger = new Label();
+                            lbSinger.Text = Functions.GetFieldValues(
+                                "select CaSi from BAIHAT where TenBaiHat = N'" + baihat + "'");
+                            lbSinger.Location = new Point(110, 50);
+                            lbSinger.Font = new Font("Arial Rounded MT", 10, FontStyle.Bold);
+                            lbSinger.ForeColor = Color.Gray;
+                            lbSinger.AutoSize = true;
+                            //
+                            pnSong.Controls.Add(pbSong);
+                            pnSong.Controls.Add(lbSong);
+                            pnSong.Controls.Add(lbSinger);
+                            //
+                            pnSong.MouseClick += new MouseEventHandler(this._songClick);
+                            pnSong.MouseHover += new EventHandler(this._songHover);
+                            pnSong.MouseLeave += new EventHandler(this._songLeave);
+                            pnSong.Cursor = Cursors.Hand;
+                            //
+                            foreach (Control control in pnSong.Controls)
+                            {
+                                control.MouseClick += new MouseEventHandler(this._itemClick);
+                                control.MouseHover += new EventHandler(this._itemHover);
+                                control.MouseLeave += new EventHandler(this._itemLeave);
+                            }
+                            flpnSong.Controls.Add(pnSong);
+                        }
+                    }
+                }
+            }
         }
     }
 }

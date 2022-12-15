@@ -37,7 +37,6 @@
             this.pbPlay = new System.Windows.Forms.PictureBox();
             this.rtxtLyrics = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.pbHome = new System.Windows.Forms.PictureBox();
             this.pbSong = new System.Windows.Forms.PictureBox();
             this.pnBack = new System.Windows.Forms.Panel();
@@ -46,16 +45,17 @@
             this.lbCategory = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbSong = new System.Windows.Forms.Label();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAddPlaylist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLike)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSong)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -152,16 +152,6 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Lyrics";
             // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(348, 819);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(10, 10);
-            this.axWindowsMediaPlayer1.TabIndex = 8;
-            this.axWindowsMediaPlayer1.Visible = false;
-            // 
             // pbHome
             // 
             this.pbHome.BackgroundImage = global::MusicApp.Properties.Resources.home_icon;
@@ -254,13 +244,23 @@
             this.lbSong.TabIndex = 0;
             this.lbSong.Text = "A LITTE LOVE";
             // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(348, 770);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(21, 45);
+            this.axWindowsMediaPlayer1.TabIndex = 8;
+            this.axWindowsMediaPlayer1.Visible = false;
+            // 
             // Music
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1478, 841);
-            this.Controls.Add(this.pbHome);
             this.Controls.Add(this.axWindowsMediaPlayer1);
+            this.Controls.Add(this.pbHome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rtxtLyrics);
             this.Controls.Add(this.panel2);
@@ -278,11 +278,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAddPlaylist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLike)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSong)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,7 +298,6 @@
         private System.Windows.Forms.PictureBox pbAddPlaylist;
         private System.Windows.Forms.PictureBox pbLike;
         private System.Windows.Forms.PictureBox pbPlay;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.PictureBox pbHome;
         private System.Windows.Forms.Label lbSinger;
         private System.Windows.Forms.Label lbComposer;
@@ -307,5 +306,6 @@
         private System.Windows.Forms.Label lbSong;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pbDownload;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
