@@ -76,10 +76,10 @@ namespace MusicApp
                 Functions.RunSQL("insert into CHITIETPLAYLIST values(N'" + playlistClick + "', N'" + Home.songClick + "')");
                 string sobaihat = Functions.GetFieldValues("select COUNT(TenBaiHat) from CHITIETPLAYLIST where TenPlaylist = N'" + playlistClick + "'");
                 temp.Controls[1].Text = sobaihat + " bài hát";
-                MessageBox.Show("Them bai hat thanh cong");
+                MessageBox.Show("Thêm bài hát thành công");
             }
             else
-                MessageBox.Show("Bai hat da ton tai trong Playlist");
+                MessageBox.Show("Bài hát đã tồn tại trong Playlist");
         }
 
         void _playlistHover(object sender, EventArgs e)
@@ -161,6 +161,24 @@ namespace MusicApp
         private void pnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtPlaylist_Enter(object sender, EventArgs e)
+        {
+            if (txtPlaylist.Text == "Enter new playlist name")
+            {
+                txtPlaylist.Text = "";
+                txtPlaylist.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtPlaylist_Leave(object sender, EventArgs e)
+        {
+            if (txtPlaylist.Text == "")
+            {
+                txtPlaylist.Text = "Enter new playlist name";
+                txtPlaylist.ForeColor = Color.Gray;
+            }
         }
     }
 }

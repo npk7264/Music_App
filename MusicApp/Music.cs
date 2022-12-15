@@ -21,6 +21,14 @@ namespace MusicApp
 
         private void Music_Load(object sender, EventArgs e)
         {
+            // Lưu lượt nghe
+            int luotnghe = Convert.ToInt32(Functions.GetFieldValues(
+                "select LuotNghe from BAIHAT where TenBaiHat = N'" + Home.songClick + "'")) + 1;
+            Functions.RunSQL(
+                "update BAIHAT set LuotNghe = " + luotnghe.ToString() + " where TenBaiHat = N'" + Home.songClick + "'");
+            // Lưu lịch sử
+            Functions.RunSQL("insert into LICHSU values(N'" + Home.songClick + "', '" + DateTime.Now.ToString() + "')");
+
             // Load ảnh
             string songImg = Functions.GetFieldValues("select AnhBaiHat from BAIHAT where TenBaiHat = N'" + Home.songClick + "'");
             pbSong.BackgroundImage = Image.FromFile("songImage/" + songImg + ".jpg");

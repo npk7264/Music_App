@@ -98,10 +98,14 @@
             // 
             this.txtPlaylist.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPlaylist.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlaylist.ForeColor = System.Drawing.Color.Gray;
             this.txtPlaylist.Location = new System.Drawing.Point(15, 15);
             this.txtPlaylist.Name = "txtPlaylist";
             this.txtPlaylist.Size = new System.Drawing.Size(848, 31);
             this.txtPlaylist.TabIndex = 0;
+            this.txtPlaylist.Text = "Enter new playlist name";
+            this.txtPlaylist.Enter += new System.EventHandler(this.txtPlaylist_Enter);
+            this.txtPlaylist.Leave += new System.EventHandler(this.txtPlaylist_Leave);
             // 
             // pbHome
             // 

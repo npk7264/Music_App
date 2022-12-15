@@ -82,6 +82,8 @@ namespace MusicApp
         {
             Panel temp = (Panel)sender;
             Home.songClick = temp.Controls[1].Text;
+
+            this.Close();
             DetailHistory frm = new DetailHistory();
             frm.ShowDialog();
         }

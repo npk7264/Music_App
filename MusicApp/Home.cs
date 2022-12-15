@@ -123,12 +123,7 @@ namespace MusicApp
             Panel temp = (Panel)sender;
             Control txtSong = temp.Controls[1];
             songClick = txtSong.Text;
-            // Luu luot nghe
-            int luotnghe = Convert.ToInt32(Functions.GetFieldValues("select LuotNghe from BAIHAT where TenBaiHat = N'" + songClick + "'")) + 1;
-            Functions.RunSQL("update BAIHAT set LuotNghe = " + luotnghe.ToString() + " where TenBaiHat = N'" + songClick + "'");
-            // Luu lich su
-            Functions.RunSQL("insert into LICHSU values(N'" + songClick + "', '" + DateTime.Now.ToString() + "')");
-            //
+
             Music frm = new Music();
             frm.ShowDialog();
         }

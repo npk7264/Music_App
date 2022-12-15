@@ -21,7 +21,7 @@ namespace MusicApp
         {
             PictureBox pbSong = new PictureBox();
             pbSong.Size = new Size(60, 60);
-            pbSong.Location = new Point(0, 10);
+            pbSong.Location = new Point(10, 10);
             string songImg = Functions.GetFieldValues(
                 "select AnhBaiHat from BAIHAT where TenBaiHat = N'" + Home.songClick + "'");
             pbSong.BackgroundImage = Image.FromFile("songImage/" + songImg + ".jpg");
@@ -42,18 +42,22 @@ namespace MusicApp
             lbSinger.ForeColor = Color.Gray;
             lbSinger.AutoSize = true;
             //
-            Label lbView = new Label();
-            lbView.Text = Functions.GetFieldValues(
-                "select LuotNghe from BAIHAT where TenBaiHat = N'" + Home.songClick + "'");
-            lbView.Location = new Point(630, 30);
-            lbView.Font = new Font("Arial Rounded MT", 10, FontStyle.Bold);
-            lbView.ForeColor = Color.Gray;
-            lbView.AutoSize = true;
-            //
             pnSong.Controls.Add(pbSong);
             pnSong.Controls.Add(lbSong);
             pnSong.Controls.Add(lbSinger);
-            pnSong.Controls.Add(lbView);
+
+            //
+            pnSong.MouseClick += new MouseEventHandler(this._songClick);
+            pnSong.MouseHover += new EventHandler(this._songHover);
+            pnSong.MouseLeave += new EventHandler(this._songLeave);
+            pnSong.Cursor = Cursors.Hand;
+            //
+            foreach (Control control in pnSong.Controls)
+            {
+                control.MouseClick += new MouseEventHandler(this._itemClick);
+                control.MouseHover += new EventHandler(this._itemHover);
+                control.MouseLeave += new EventHandler(this._itemLeave);
+            }
 
             //////////////////////////////////////////////////////////
             List<string> times = Functions.GetFieldValuesList(
@@ -76,14 +80,52 @@ namespace MusicApp
                 pn.Controls.Add(lbTime);
                 flpnTime.Controls.Add(pn);
             }
-
-            pb.BackgroundImage = Image.FromFile("songImage/" + songImg + ".jpg");
-            pb.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void pnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+            History frm = new History();
+            frm.ShowDialog();
+        }
+
+        void _songClick(object sender, MouseEventArgs e)
+        {
+            Panel temp = (Panel)sender;
+            Home.songClick = temp.Controls[1].Text;
+
+            Music frm = new Music();
+            frm.ShowDialog();
+        }
+
+        void _songHover(object sender, EventArgs e)
+        {
+            Panel temp = (Panel)sender;
+            temp.BackColor = Color.FromArgb(212, 211, 215);
+        }
+
+        void _songLeave(object sender, EventArgs e)
+        {
+            Panel temp = (Panel)sender;
+            temp.BackColor = Color.Transparent;
+        }
+
+        void _itemClick(object sender, MouseEventArgs e)
+        {
+            Panel pnParent = (Panel)((Control)sender).Parent;
+            _songClick(pnParent, e);
+        }
+
+        void _itemHover(object sender, EventArgs e)
+        {
+            Panel pnParent = (Panel)((Control)sender).Parent;
+            _songHover(pnParent, e);
+        }
+
+        void _itemLeave(object sender, EventArgs e)
+        {
+            Panel pnParent = (Panel)((Control)sender).Parent;
+            _songLeave(pnParent, e);
         }
     }
 }
