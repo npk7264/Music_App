@@ -21,6 +21,10 @@ namespace MusicApp
 
         private void Music_Load(object sender, EventArgs e)
         {
+            axWindowsMediaPlayer1.Location = new Point(panel2.Location.X, panel2.Location.Y - 40);
+            axWindowsMediaPlayer1.Size = new Size(panel2.Width, panel2.Height);
+
+
             // Lưu lượt nghe
             int luotnghe = Convert.ToInt32(Functions.GetFieldValues(
                 "select LuotNghe from BAIHAT where TenBaiHat = N'" + Home.songClick + "'")) + 1;

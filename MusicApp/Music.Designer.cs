@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Music));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbDownload = new System.Windows.Forms.PictureBox();
             this.pbAddPlaylist = new System.Windows.Forms.PictureBox();
             this.pbLike = new System.Windows.Forms.PictureBox();
@@ -46,7 +45,6 @@
             this.lbSong = new System.Windows.Forms.Label();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAddPlaylist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLike)).BeginInit();
@@ -59,31 +57,20 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(211)))), ((int)(((byte)(215)))));
-            this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.pbDownload);
             this.panel2.Controls.Add(this.pbAddPlaylist);
             this.panel2.Controls.Add(this.pbLike);
             this.panel2.Controls.Add(this.pbPlay);
-            this.panel2.Location = new System.Drawing.Point(375, 738);
+            this.panel2.Location = new System.Drawing.Point(375, 748);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1103, 100);
+            this.panel2.Size = new System.Drawing.Size(1103, 90);
             this.panel2.TabIndex = 2;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Location = new System.Drawing.Point(185, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
             // 
             // pbDownload
             // 
             this.pbDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbDownload.Location = new System.Drawing.Point(857, 25);
+            this.pbDownload.Location = new System.Drawing.Point(773, 23);
             this.pbDownload.Name = "pbDownload";
             this.pbDownload.Size = new System.Drawing.Size(60, 50);
             this.pbDownload.TabIndex = 3;
@@ -94,7 +81,7 @@
             // 
             this.pbAddPlaylist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbAddPlaylist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbAddPlaylist.Location = new System.Drawing.Point(689, 17);
+            this.pbAddPlaylist.Location = new System.Drawing.Point(605, 15);
             this.pbAddPlaylist.Name = "pbAddPlaylist";
             this.pbAddPlaylist.Size = new System.Drawing.Size(60, 60);
             this.pbAddPlaylist.TabIndex = 2;
@@ -105,7 +92,7 @@
             // 
             this.pbLike.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbLike.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLike.Location = new System.Drawing.Point(353, 17);
+            this.pbLike.Location = new System.Drawing.Point(269, 15);
             this.pbLike.Name = "pbLike";
             this.pbLike.Size = new System.Drawing.Size(60, 60);
             this.pbLike.TabIndex = 1;
@@ -116,7 +103,7 @@
             // 
             this.pbPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbPlay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbPlay.Location = new System.Drawing.Point(521, 17);
+            this.pbPlay.Location = new System.Drawing.Point(437, 15);
             this.pbPlay.Name = "pbPlay";
             this.pbPlay.Size = new System.Drawing.Size(60, 60);
             this.pbPlay.TabIndex = 0;
@@ -239,27 +226,25 @@
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(21, 45);
             this.axWindowsMediaPlayer1.TabIndex = 8;
-            this.axWindowsMediaPlayer1.Visible = false;
             // 
             // Music
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1478, 841);
-            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rtxtLyrics);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pbSong);
             this.Controls.Add(this.pnBack);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Music";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Music";
             this.Load += new System.EventHandler(this.Music_Load);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDownload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAddPlaylist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLike)).EndInit();
@@ -288,7 +273,6 @@
         private System.Windows.Forms.Label lbCategory;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbSong;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pbDownload;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
