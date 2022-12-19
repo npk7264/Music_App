@@ -40,7 +40,10 @@ namespace MusicApp
             lbSong.Text = Home.songClick;
             lbSinger.Text = "Singer: " + Functions.GetFieldValues("select CaSi from BAIHAT where TenBaiHat = N'" + Home.songClick + "'");
             lbComposer.Text = "Composer: " + Functions.GetFieldValues("select SangTac from BAIHAT where TenBaiHat = N'" + Home.songClick + "'");
-            lbCategory.Text = "Genre: " + Functions.GetFieldValues("select TheLoai from BAIHAT where TenBaiHat = N'" + Home.songClick + "'");
+            string genre = Functions.GetFieldValues("select TheLoai from BAIHAT where TenBaiHat = N'" + Home.songClick + "'");
+            if (genre == "R&B")
+                genre = "R&&B";
+            lbCategory.Text = "Genre: " + genre;
 
             // Load lời bài hát
             string lyrics_path = "songLyric/" + songImg + ".txt";
@@ -131,6 +134,22 @@ namespace MusicApp
 
         private void pbDownload_Click(object sender, EventArgs e)
         {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "mp3|*.mp3";
+            bool flag = false;
+            string destPath = "";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                flag = true;
+                destPath = saveFileDialog.FileName;
+            }
+            if(flag)
+            {
+                string sourceFile = axWindowsMediaPlayer1.URL;
+                string destFile = destPath;
+                File.Copy(sourceFile, destFile, true);
+                MessageBox.Show("Đã tải nhạc về máy");
+            }
         }
     }
 }

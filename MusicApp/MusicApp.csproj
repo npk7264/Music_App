@@ -220,5 +220,14 @@
   <ItemGroup>
     <None Include="Resources\rap.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closeapp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closeapp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closeapp2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
